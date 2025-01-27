@@ -15,7 +15,7 @@ class PhoneBook {
 		~PhoneBook();
 
 	void	add_contact(void);
-	void	search(std::string input);
+	void	search(void);
 };
 
 #endif
