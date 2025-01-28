@@ -1,30 +1,21 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
+#include <cstdlib>
 #include "contact.hpp"
 #include "phonebook.hpp"
 
 PhoneBook::PhoneBook(void) {
 	this->_index = 0;
 	this->_nb_contacts = 0;
-	std::cout << "Phonebook constructor called" << std::endl;
 	return;
 }
 
-PhoneBook::~PhoneBook(void) {
-	std::cout << "Phonebook destructor called" << std::endl;
-	return;
-}
+PhoneBook::~PhoneBook(void) {}
 
-Contact::Contact(void) {
-	std::cout << "Contact constructor called" << std::endl;
-	return;
-}
+Contact::Contact(void) {}
 
-Contact::~Contact(void) {
-	std::cout << "Contact destructor called" << std::endl;
-	return;
-}
+Contact::~Contact(void) {}
 
 int	check_number(std::string phone_number)
 {
@@ -61,7 +52,7 @@ void	PhoneBook::add_contact()
 		if (std::cin.eof())
 		{
 			std::cout << "BYE" << std::endl;
-			return ;
+			exit (1);
 		}
 		if (first_name.empty())
 		{
@@ -77,7 +68,7 @@ void	PhoneBook::add_contact()
 		if (std::cin.eof())
 		{
 			std::cout << "BYE" << std::endl;
-			return ;
+			exit (1);
 		}
 		if (last_name.empty())
 		{
@@ -93,7 +84,7 @@ void	PhoneBook::add_contact()
 		if (std::cin.eof())
 		{
 			std::cout << "BYE" << std::endl;
-			return ;
+			exit (1);
 		}
 		if (nickname.empty())
 		{
@@ -109,7 +100,7 @@ void	PhoneBook::add_contact()
 		if (std::cin.eof())
 		{
 			std::cout << "BYE" << std::endl;
-			return ;
+			exit (1);
 		}
 		if (phone_number.empty() || check_number(phone_number) == -1)
 		{
@@ -125,7 +116,7 @@ void	PhoneBook::add_contact()
 		if (std::cin.eof())
 		{
 			std::cout << "BYE" << std::endl;
-			return ;
+			exit (1);
 		}
 		if (darkest_secret.empty())
 		{
@@ -211,6 +202,11 @@ void	PhoneBook::search()
 	while (1)
 	{
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << "BYE" << std::endl;
+			exit (1);
+		}
 		std::stringstream ss(input);
 		if (!(ss >> index))
 		{
