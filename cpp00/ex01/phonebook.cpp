@@ -5,9 +5,7 @@
 #include "contact.hpp"
 #include "phonebook.hpp"
 
-PhoneBook::PhoneBook(void) {
-	this->_index = 0;
-	this->_nb_contacts = 0;
+PhoneBook::PhoneBook(void) : _index(0), _nb_contacts(0) {
 	return;
 }
 

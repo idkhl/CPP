@@ -1,6 +1,6 @@
-NAME = zombie
+NAME = brain
 
-SRCS = zombieHorde.cpp main.cpp Zombie.cpp
+SRCS = main.cpp Weapon.hpp Weapon.cpp HumanA.hpp HumanA.cpp HumanB.hpp HumanB.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
