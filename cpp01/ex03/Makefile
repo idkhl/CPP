@@ -1,6 +1,6 @@
 NAME = brain
 
-SRCS = main.cpp Weapon.hpp Weapon.cpp HumanA.hpp HumanA.cpp HumanB.hpp HumanB.cpp
+SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
