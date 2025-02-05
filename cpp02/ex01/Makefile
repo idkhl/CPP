@@ -1,6 +1,6 @@
-NAME = brain
+NAME = fixed
 
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS = main.cpp  Fixed.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -17,6 +17,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
 
 %.o : %.c 
 	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
