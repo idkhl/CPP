@@ -1,4 +1,4 @@
-NAME = brain
+NAME = weapon
 
 SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 

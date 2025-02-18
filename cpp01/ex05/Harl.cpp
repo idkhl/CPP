@@ -30,5 +30,5 @@ void Harl::complain(std::string level)
             return;
         }
     }
-	std::cout << "Harl does not understand what you want." << std::endl;
+	std::cout << "[????]\nHarl does not understand what you want." << std::endl;
 }

@@ -1,25 +1,22 @@
 #include <iostream>
 #include <fstream>
 
-int main(int ac, char **av)
+void	replace(char **av)
 {
-	if (ac != 4)
-	{
-		std::cerr << "Wrong format [./sed <filename> s1 s2]" << std::endl;
-		return -1;
-	}
 	std::ifstream file(av[1]);
 	if (!file.is_open())
 	{
 		std::cerr << "Unable to open file" << std::endl;
-		return -1;
+		return;
 	}
-	std::ofstream temp("temp.txt");
+	std::string tmp = ".replace";
+	std::string filename = av[1] + tmp;
+	std::ofstream temp(filename.c_str());
 	if (!temp.is_open())
 	{
 		std::cerr << "Unable to create temp file" << std::endl;
 		file.close();
-		return -1;
+		return;
 	}
 
 	std::string s1 = av[2];
@@ -29,8 +26,8 @@ int main(int ac, char **av)
 		std::cerr << "Error: s1 cannot be an empty string" << std::endl;
 		file.close();
 		temp.close();
-		std::remove("temp.txt");
-		return -1;
+		std::remove(filename.c_str());
+		return;
 	}
 
 	std::string line;
@@ -47,16 +44,16 @@ int main(int ac, char **av)
 
 	file.close();
 	temp.close();
-	if (std::remove(av[1]) != 0)
+}
+
+int main(int ac, char **av)
+{
+	if (ac != 4)
 	{
-		std::cerr << "Error deleting original file" << std::endl;
+		std::cerr << "Wrong format [./sed <filename> s1 s2]" << std::endl;
 		return -1;
 	}
-	if (std::rename("temp.txt", av[1]) != 0)
-	{
-		std::cerr << "Error renaming temp file" << std::endl;
-		return -1;
-	}
+	replace(av);
 
 	return 0;
 }
