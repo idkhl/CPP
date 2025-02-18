@@ -5,42 +5,16 @@
 class Animal
 {
 	protected:
-		std::string _type;
+		std::string type;
 
 	public:
 		Animal();
 		Animal(const Animal &other);
 		Animal &operator=(const Animal &other);
-		~Animal();
+		virtual ~Animal();
 
-		std::strinm getType();
-		void makeSound();
+	virtual std::string getType() const;
+	virtual void makeSound() const;
 };
-
-class Dog : public Animal
-{
-	private:
-
-
-	public:
-		Dog();
-		Dog(const Dog &other);
-		Dog &operator=(const Dog &other);
-		~Dog();
-};
-
-class Cat : public Animal
-{
-	private:
-
-	
-	public:
-		Cat();
-		Cat(const Cat &other);
-		Cat &operator=(const Cat &other);
-		~Cat();
-};
-
-std::ostream &operator<<(std::ostream &out, const Animal &type);
 
 #endif
