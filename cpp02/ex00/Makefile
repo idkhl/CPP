@@ -4,9 +4,9 @@ SRCS = main.cpp  Fixed.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -I ./includes
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -I ./includes
 
 RM = rm -f
 
