@@ -5,6 +5,10 @@
 
 class ICharacter
 {
+	private:
+		// AMateria inventory;
+		std::string _name;
+
 	public:
 		virtual ~ICharacter() {}
 		virtual std::string const & getName() const = 0;
