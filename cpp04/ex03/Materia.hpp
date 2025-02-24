@@ -7,15 +7,14 @@
 class AMateria
 {
 	protected:
-		Ice ice;
-		Cure cure;
+		std::string _type;
 
 	public:
-		AMateria(std::string const & type);
 		AMateria();
+		AMateria(std::string const & type);
 		AMateria(AMateria const &copy);
-		AMateria operator=(AMateria const &copy);
-		~AMateria();
+		AMateria &operator=(AMateria const &copy);
+		virtual ~AMateria();
 
 	std::string const & getType() const;
 	virtual AMateria* clone() const = 0;
