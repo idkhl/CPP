@@ -1,20 +1,23 @@
 #include "Ice.hpp"
 
-Ice::Ice() {}
+Ice::Ice() : AMateria("ice") {}
 
-Ice::Ice (Ice const &copy) {}
+Ice::Ice (Ice const &copy) : AMateria(copy) {}
 
-Ice Ice::operator=(Ice const &copy) {}
+Ice &Ice::operator=(Ice const &copy) {
+	if (this != &copy)
+		this->_type = copy._type;
+	return *this;
+}
 
 Ice::~Ice() {}
 
-Ice  Ice::clone()
+AMateria*  Ice::clone() const
 {
-	Ice ice;
-	return ice;
+	return new Ice(*this);
 }
 
-void Ice::use(ICharacter&)
+void Ice::use(ICharacter &target)
 {
-	std::cout << "*shoots an ice bolt at " << "*" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

@@ -1,5 +1,6 @@
 #include "Character.hpp"
 
-ICharacter::ICharacter(std::string name) {
+Character::Character(std::string name) {
 	_name = name; 
 }
+
