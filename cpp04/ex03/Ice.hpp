@@ -1,6 +1,9 @@
 #ifndef ICE_HPP
 # define ICE_HPP
-# include "Character.hpp"
+// # include "Character.hpp"
+
+class ICharacter;
+class AMateria;
 
 class Ice : public AMateria
 {

@@ -1,8 +1,11 @@
 #ifndef MATERIA_HPP
 # define MATERIA_HPP
 # include <iostream>
-# include "Character.hpp"
+// # include "Character.hpp"
 # include "Cure.hpp"
+
+class ICharacter;
+class Character;
 
 class AMateria
 {

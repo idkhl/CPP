@@ -1,6 +1,10 @@
 #ifndef CURE_HPP
 # define CURE_HPP
-# include "Materia.hpp"
+// # include "Materia.hpp"
+
+class AMateria;
+class Materia;
+class ICharacter;
 
 class Cure : public AMateria
 {
