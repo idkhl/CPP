@@ -31,24 +31,22 @@ Fixed::~Fixed() {
 
 int Fixed::getRawBits(void) const
 {
-	// std::cout << "getRawBits member function called" << std::endl;
     return this->_value;
 }
 
 void Fixed::setRawBits (int const raw)
 {
-    // std::cout << "setRawBits member function called" << std::endl;
     this->_value = raw;
 }
 
 float	Fixed::toFloat( void ) const
 {
-	return (float)this->_value / (1 << Fixed::_bits);
+	return (float)this->_value / (1 << _bits);
 }
 
 int		Fixed::toInt( void ) const
 {
-	return this->_value >> Fixed::_bits;
+	return this->_value >> _bits;
 }
 
 std::ostream & operator<<(std::ostream & o, const Fixed &copy)

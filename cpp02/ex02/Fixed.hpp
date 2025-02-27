@@ -28,20 +28,20 @@ class Fixed
 	static Fixed &max(Fixed &a, Fixed &b);
 	static const Fixed &max(const Fixed &a, const Fixed &b);
 
-	bool			operator>(const Fixed &other) const;
-	bool			operator<(const Fixed &other) const;
-	bool			operator>=(const Fixed &other) const;
-	bool			operator<=(const Fixed &other) const;
-	bool			operator==(const Fixed &other) const;
-	bool			operator!=(const Fixed &other) const;
-	Fixed			operator+(const Fixed &other) const;
-	Fixed			operator-(const Fixed &other) const;
-	Fixed			operator*(const Fixed &other) const;
-	Fixed			operator/(const Fixed &other) const;
-	Fixed			operator++(int);
-	Fixed			&operator++(void);
-	Fixed			operator--(int);
-	Fixed			&operator--(void);
+	bool	operator>(const Fixed &other) const;
+	bool	operator<(const Fixed &other) const;
+	bool	operator>=(const Fixed &other) const;
+	bool	operator<=(const Fixed &other) const;
+	bool	operator==(const Fixed &other) const;
+	bool	operator!=(const Fixed &other) const;
+	Fixed	operator+(const Fixed &other) const;
+	Fixed	operator-(const Fixed &other) const;
+	Fixed	operator*(const Fixed &other) const;
+	Fixed	operator/(const Fixed &other) const;
+	Fixed	operator++(int);
+	Fixed	&operator++(void);
+	Fixed	operator--(int);
+	Fixed	&operator--(void);
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed);

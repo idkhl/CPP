@@ -4,9 +4,6 @@ ClapTrap::ClapTrap(const std::string name): _name(name), _hit(10), _energy(10), 
 	std::cout << "Constructor called" << std::endl;
 }
 
-// ClapTrap::ClapTrap(const std::string& name): _name(name), _hit(10), _energy(10), _damage(0) {
-// }
-
 ClapTrap::ClapTrap(const ClapTrap& other) {
 	*this = other;
 	std::cout << "ClapTrap " << _name << " copied" << std::endl;

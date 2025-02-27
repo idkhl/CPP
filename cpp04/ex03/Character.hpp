@@ -1,7 +1,7 @@
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 # include <iostream>
-// # include "Materia.hpp"
+# include "Materia.hpp"
 
 class	AMateria;
 

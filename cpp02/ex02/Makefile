@@ -4,23 +4,23 @@ SRCS = main.cpp  Fixed.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -I ./includes
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -I ./includes
 
 RM = rm -f
 
 .cpp.o:
-	cc $(CFLAGS) -c -o $@ $<
+	c++ $(CXXFLAGS) -c -o $@ $<
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 
-%.o : %.c 
-	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
+%.o : %.cpp 
+	$(CXX) $(CXXFLAGS) -c $< -o ${<:.cpp=.o}
 
 clean :
 	${RM} ${OBJS}
