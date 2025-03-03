@@ -2,25 +2,21 @@
 
 int main()
 {
-	ClapTrap clap1("Lili");
+    ClapTrap clap1("Lili");
     ClapTrap clap2("Lala");
-
-    std::cout << std::endl;
-
-    clap1.attack("Lala");
-    clap2.takeDamage(3);
-
-    std::cout << std::endl;
-
-    clap2.beRepaired(5);
-
-    std::cout << std::endl;
-
-    for (int i = 0; i < 11; i++) {
-        clap1.attack("Lala");
+    
+    clap1.attack("a target");
+    clap2.attack("an enemy");
+    
+    clap1.takeDamage(5);
+    clap1.beRepaired(3);
+    clap1.takeDamage(8);
+    clap1.beRepaired(5);
+    
+    for (int i = 0; i < 10; ++i) {
+        clap2.attack("a random target");
     }
-
-    std::cout << std::endl;
-
+    clap2.attack("a random target");
+    
     return 0;
 }
