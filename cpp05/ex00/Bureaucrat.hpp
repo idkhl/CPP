@@ -10,16 +10,16 @@ class Bureaucrat
 
 	public:
 		Bureaucrat();
+		~Bureaucrat();
+
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(const Bureaucrat &copy);
 		Bureaucrat &operator=(const Bureaucrat &copy);
-		~Bureaucrat();
 
 	std::string	getName(void) const;
 	int			getGrade(void) const;
-
-	void	incrementGrade(void);
-	void	decrementGrade(void);
+	void		incrementGrade(void);
+	void		decrementGrade(void);
 
 	class GradeTooHighException : public std::exception
 	{
