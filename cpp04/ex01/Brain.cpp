@@ -9,7 +9,7 @@ Brain::Brain(const Brain &other) {
 	*this = other;
 }
 
-Brain Brain::operator=(const Brain &other) {
+Brain &Brain::operator=(const Brain &other) {
 	std::cout << "Brain assignation operator called" << std::endl;
 	if (this != &other)
 	{
