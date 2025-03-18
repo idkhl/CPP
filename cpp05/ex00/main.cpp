@@ -12,6 +12,7 @@ int main()
 	{
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try
 	{
@@ -23,6 +24,7 @@ int main()
 	{
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try
 	{
@@ -32,6 +34,7 @@ int main()
 	{
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try
 	{
@@ -41,6 +44,7 @@ int main()
 	{
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try
 	{

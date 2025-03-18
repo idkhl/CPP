@@ -30,12 +30,15 @@ AForm	*Intern::makeForm(const std::string name, const std::string target) const
 	{
 		case 0:
 			form = new ShrubberyCreationForm(target);
+			std::cout << "Intern created shrubbery creation form" << std::endl;
 			break;
 		case 1:
 			form = new RobotomyRequestForm(target);
+			std::cout << "Intern created robotomy creation form" << std::endl;
 			break;
 		case 2:
 			form = new PresidentialPardonForm(target);
+			std::cout << "Intern created presidential pardon form" << std::endl;
 			break;
 		default:
 			throw FormDoesNotExist();

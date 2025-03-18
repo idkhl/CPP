@@ -1,9 +1,6 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 # include <iostream>
-# include "Form.hpp"
-
-class Form;
 
 class Bureaucrat
 {
