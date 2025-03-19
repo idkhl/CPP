@@ -12,7 +12,7 @@ void deepCopyTest()
 
 int main()
 {
-	// deepCopyTest();
+	deepCopyTest();
 
 	const Animal* meta = new Animal();
 	const Animal* dog = new Dog();

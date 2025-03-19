@@ -21,17 +21,20 @@ class Character : public ICharacter
 	private:
 		std::string _name;
 		AMateria *_inventory[4];
+		AMateria *_floor[5];
 
 	public:
 		Character(std::string const &name);
 		Character(Character const &copy);
 		Character &operator=(Character const &copy);
 		~Character();
-	
+
 		std::string const & getName() const;
         void equip(AMateria* m);
         void unequip(int idx);
         void use(int idx, ICharacter& target);
+		void addToFloor(AMateria *materia);
+		void deleteFloor(void);
 };
 
 #endif

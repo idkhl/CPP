@@ -21,5 +21,6 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "* uses an  on " << target.getName() << " *" << std::endl;
+	(void)target;
+// std::cout << "* uses " << _type << " on " << target.getName() << " *" << std::endl;
 }

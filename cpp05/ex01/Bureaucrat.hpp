@@ -8,17 +8,17 @@ class Form;
 class Bureaucrat
 {
 	private:
-		std::string _name;
+		const std::string _name;
 		int			_grade;
 
 	public:
 		Bureaucrat();
 		~Bureaucrat();
 
-		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const std::string name,int grade);
 		Bureaucrat(const Bureaucrat &copy);
 		Bureaucrat &operator=(const Bureaucrat &copy);
-		
+
 	std::string	getName(void) const;
 	int			getGrade(void) const;
 	void		incrementGrade(void);

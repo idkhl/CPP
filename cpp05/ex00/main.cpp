@@ -10,10 +10,9 @@ int main()
     }
 	catch (const std::exception &e)
 	{
-        std::cerr << "Exception caught: " << e.what() << std::endl;
+        std::cerr << "Bureaucrat couldn't increment grade because: " << e.what() << std::endl;
     }
     std::cout << std::endl;
-
     try
 	{
         Bureaucrat b2("Bob", 150);
@@ -22,30 +21,27 @@ int main()
     }
 	catch (const std::exception &e)
 	{
-        std::cerr << "Exception caught: " << e.what() << std::endl;
+        std::cerr << "Bureaucrat couldn't decrement grade because: " << e.what() << std::endl;
     }
     std::cout << std::endl;
-
     try
 	{
         Bureaucrat b3("Charlie", 151);
     }
 	catch (const std::exception &e)
 	{
-        std::cerr << "Exception caught: " << e.what() << std::endl;
+        std::cerr << "Bureaucrat couldn't be created because: " << e.what() << std::endl;
     }
     std::cout << std::endl;
-
     try
 	{
         Bureaucrat b4("Dave", 0);
     }
 	catch (const std::exception &e)
 	{
-        std::cerr << "Exception caught: " << e.what() << std::endl;
+        std::cerr << "Bureaucrat couldn't be created because: "<< e.what() << std::endl;
     }
     std::cout << std::endl;
-
     try
 	{
         Bureaucrat b5("Eve", 75);
@@ -57,8 +53,7 @@ int main()
     }
 	catch (const std::exception &e)
 	{
-        std::cerr << "Exception caught: " << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
-
     return 0;
 }

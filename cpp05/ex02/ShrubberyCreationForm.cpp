@@ -43,6 +43,6 @@ void	ShrubberyCreationForm::execute(const Bureaucrat& executor) const
     std::ofstream file(file_name.c_str());
     if (!file)
         throw std::runtime_error("Failed to open file");
-    file << "ASCII art of a shrubbery" << std::endl;
+    file << "ASCII trees" << std::endl;
     file.close();
 }

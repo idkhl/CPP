@@ -12,13 +12,10 @@ int main()
 
     ICharacter* me = new Character("Mob");
 
-    AMateria* tmp;
-    tmp = src->createMateria("cure");
-    me->equip(tmp);
-    tmp = src->createMateria("ice");
-    me->equip(tmp);
+    me->equip(src->createMateria("ice"));
+    me->equip(src->createMateria("cure"));
 
-    ICharacter* bob = new Character("bob");
+    ICharacter* bob = new Character("Bob");
 
     me->use(0, *bob);
     me->use(1, *bob);
@@ -35,6 +32,18 @@ int main()
     AMateria* unknown = src->createMateria("fire");
     if (!unknown)
         std::cout << "Unknown materia could not be created" << std::endl;
+    me->unequip(0);
+    me->unequip(1);
+    me->unequip(2);
+    me->unequip(3);
+    me->equip(src->createMateria("cure"));
+    me->equip(src->createMateria("ice"));
+    me->equip(src->createMateria("cure"));
+    me->equip(src->createMateria("ice"));
+    me->unequip(0);
+    me->unequip(1);
+    me->unequip(2);
+    me->unequip(3);
 
     delete bob;
     delete me;
