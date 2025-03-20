@@ -40,7 +40,7 @@ AForm	*Intern::makeForm(const std::string name, const std::string target) const
 			form = new PresidentialPardonForm(target);
 			std::cout << "Intern created presidential pardon form" << std::endl;
 			break;
-		default:
+		defaulzt:
 			throw FormDoesNotExist();
 			break;
 	}
