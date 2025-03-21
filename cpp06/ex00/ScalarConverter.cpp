@@ -13,40 +13,29 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &copy) {
 
 ScalarConverter::~ScalarConverter() {}
 
-char	ScalarConverter::toChar(std::string str)
+void ScalarConverter::printChar(char c)
 {
-	if (str.size() != 1)
-	{
-		std::cout << str << " cannot be converted to char" << std::endl;
-		return '\0';
-	}
-	char c = static_cast<char>(str[0]);
-	return (c);
-}
-
-int	ScalarConverter::toInt(std::string str)
-{
-	int nb = std::atoi(str.c_str());
-	return nb;
-}
-
-float ScalarConverter::toFloat(std::string str)
-{
-	int nb = toInt(str);
-	float flt = static_cast<float>(nb);
-	return flt;
-}
-
-double ScalarConverter::toDouble(std::string str)
-{
-	int nb = toInt(str);
-	double dbl = static_cast<double>(nb);
-	return dbl;
+    if (c < 32 || c > 126)
+        std::cout << "char: Non displayable" << std::endl;
+    else
+        std::cout << "char: '" << c << "'" << std::endl;
 }
 
 void ScalarConverter::convert(const std::string str) {
-	std::cout << toChar(str) << std::endl;
-	std::cout <<toInt(str) << std::endl;
-	std::cout <<toFloat(str) << std::endl;
-	std::cout <<toDouble(str) << std::endl;
+	int intValue;
+    std::istringstream iss(str);
+    if (!(iss >> intValue))
+	{
+		std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+    }
+	else
+	{
+		printChar(static_cast<char>(intValue));
+        std::cout << "int: " << intValue << std::endl;
+    }
+    float floatValue = std::strtof(str.c_str(), NULL);
+    double doubleValue = std::strtod(str.c_str(), NULL);
+    std::cout << "float: " << floatValue << "f" << std::endl;
+    std::cout << "double: " << doubleValue << std::endl;
 }

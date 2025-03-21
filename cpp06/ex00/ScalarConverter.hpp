@@ -2,6 +2,8 @@
 # define SCALARCONVERTER_HPP
 # include <iostream>
 # include <cstdlib>
+# include <sstream>
+# include <limits>
 
 class ScalarConverter
 {
@@ -11,10 +13,7 @@ class ScalarConverter
 		ScalarConverter &operator=(const ScalarConverter &copy);
 		~ScalarConverter();
 
-	static char	toChar(std::string str);
-	static int	toInt(std::string str);
-	static float toFloat(std::string str);
-	static double toDouble(std::string str);
+	static void printChar(char c);
 
 	public:
 		static void convert(const std::string str);
