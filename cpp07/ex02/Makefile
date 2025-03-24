@@ -1,4 +1,4 @@
-NAME = Template
+NAME = Array
 
 SRCS = main.cpp
 

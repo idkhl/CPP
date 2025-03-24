@@ -1,4 +1,4 @@
-NAME = Template
+NAME = Iter
 
 SRCS = main.cpp
 
