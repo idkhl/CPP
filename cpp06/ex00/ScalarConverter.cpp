@@ -21,21 +21,54 @@ void ScalarConverter::printChar(char c)
         std::cout << "char: '" << c << "'" << std::endl;
 }
 
-void ScalarConverter::convert(const std::string str) {
-	int intValue;
+bool hasDecimal(double value) {
+    return value != static_cast<int>(value);
+}
+
+void ScalarConverter::convert(const std::string str)
+{
+    int intValue = 0;
+    float floatValue = 0.0f;
+    double doubleValue = 0.0;
+
+    if (str.length() == 1 && !isdigit(str[0])) {
+        char c = str[0];
+        intValue = static_cast<int>(c);
+        floatValue = static_cast<float>(c);
+        doubleValue = static_cast<double>(c);
+
+        std::cout << "char: '" << c << "'" << std::endl;
+        std::cout << "int: " << intValue << std::endl;
+        std::cout << "float: " << floatValue << "f" << std::endl;
+        std::cout << "double: " << doubleValue << std::endl;
+        return;
+    }
+
     std::istringstream iss(str);
     if (!(iss >> intValue))
-	{
-		std::cout << "char: impossible" << std::endl;
+    {
+        std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
     }
-	else
-	{
-		printChar(static_cast<char>(intValue));
+    else
+    {
+        if (intValue >= 32 && intValue <= 126)
+            std::cout << "char: '" << static_cast<char>(intValue) << "'" << std::endl;
+        else
+            std::cout << "char: Non displayable" << std::endl;
+
         std::cout << "int: " << intValue << std::endl;
     }
-    float floatValue = std::strtof(str.c_str(), NULL);
-    double doubleValue = std::strtod(str.c_str(), NULL);
-    std::cout << "float: " << floatValue << "f" << std::endl;
-    std::cout << "double: " << doubleValue << std::endl;
+
+    floatValue = std::strtof(str.c_str(), NULL);
+    doubleValue = std::strtod(str.c_str(), NULL);
+
+    if (hasDecimal(floatValue))
+        std::cout << "float: " << floatValue << "f" << std::endl;
+    else
+        std::cout << "float: " << floatValue << ".0f" << std::endl;
+    if (hasDecimal(doubleValue))
+        std::cout << "double: " << doubleValue << std::endl;
+    else
+        std::cout << "double: " << doubleValue << ".0" << std::endl;
 }
