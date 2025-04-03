@@ -60,7 +60,7 @@ void ScalarConverter::convert(const std::string str)
         std::cout << "int: " << intValue << std::endl;
     }
 
-    floatValue = std::strtof(str.c_str(), NULL);
+    floatValue = static_cast<float>(std::strtod(str.c_str(), NULL));
     doubleValue = std::strtod(str.c_str(), NULL);
 
     if (hasDecimal(floatValue))
