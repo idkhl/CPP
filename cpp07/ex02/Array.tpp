@@ -25,6 +25,11 @@ Array<T>& Array<T>::operator=(const Array& other){
 
 template <typename T>
 Array<T>::~Array(void) {
+	std::cout << "Destructor called" << std::endl;
+	// if (_array != NULL)
+	// 	std::cout << "Deleting array" << std::endl;
+	// else
+	// 	std::cout << "Array is NULL" << std::endl;
 	delete[] _array;
 }
 

@@ -1,6 +1,7 @@
 #include "Array.tpp"
 #include <iostream>
 
+
 int main() {
     try {
         std::cout << "===== Default Constructor Test =====" << std::endl;
