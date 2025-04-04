@@ -16,7 +16,7 @@ int main(int ac, char **av)
 	std::string s;
 	std::stringstream ss(str);
 
-	std::stack<int> stack;
+	std::stack<double> stack;
 	while(getline(ss, s, ' '))
 	{
 		// std::cout << std::endl;
@@ -24,7 +24,7 @@ int main(int ac, char **av)
 		if (s >= "0" && s <= "9")
 		{
 			// std::cout << "~~PUSH~~" << std::endl;
-			stack.push(s[0] - 48);
+			stack.push(std::strtod(s.c_str(), NULL));
 			// std::cout << "top: " << stack.top() << std::endl;
 		}
 		else
@@ -36,9 +36,9 @@ int main(int ac, char **av)
 				std::cerr << "Error: Not enough numbers for operation" << std::endl;
 				return 1;
 			}
-			int b = stack.top();
+			double b = stack.top();
 			stack.pop();
-			int a = stack.top();
+			double a = stack.top();
 			stack.pop();
 			if (s == "+")
 				stack.push(a + b);
@@ -58,7 +58,7 @@ int main(int ac, char **av)
 			// std::cout << "top: " << stack.top() << std::endl;
 		}
 	}
-	int result = stack.top();
+	double result = stack.top();
 	std::cout << result << std::endl;
 	return 0;
 }

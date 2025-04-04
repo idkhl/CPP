@@ -6,7 +6,7 @@
 # include <vector>
 
 template <typename T>
-typename T::iterator easyfind(T &tab, int i);
+typename T::const_iterator easyfind(T &tab, int i);
 
 class IntNotFound : public std::exception
 {
