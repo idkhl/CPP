@@ -25,22 +25,40 @@ bool hasDecimal(double value) {
     return value != static_cast<int>(value);
 }
 
+bool isWord(const std::string &str) {
+    return str.find_first_not_of("0123456789.-f") != std::string::npos;
+}
+
 void ScalarConverter::convert(const std::string str)
 {
+    if (str.empty())
+    {
+        std::cout << "Error: Empty string" << std::endl;
+        return;
+    }
+    
     int intValue = 0;
     float floatValue = 0.0f;
     double doubleValue = 0.0;
-
+    
     if (str.length() == 1 && !isdigit(str[0])) {
         char c = str[0];
         intValue = static_cast<int>(c);
         floatValue = static_cast<float>(c);
         doubleValue = static_cast<double>(c);
-
+        
         std::cout << "char: '" << c << "'" << std::endl;
         std::cout << "int: " << intValue << std::endl;
         std::cout << "float: " << floatValue << "f" << std::endl;
         std::cout << "double: " << doubleValue << std::endl;
+        return;
+    }
+
+    if (isWord(str) && str != "nan" && str != "nanf" && str != "inf" && str != "inff" && str != "-inf" && str != "-inff") {
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: impossible" << std::endl;
+        std::cout << "double: impossible" << std::endl;
         return;
     }
 

@@ -1,7 +1,8 @@
 #include "Data.hpp"
 #include "Serializer.hpp"
 
-int main() {
+int main()
+{
 	std::string name = "TestName";
 	int dataValue = 42;
 	Data originalData(name, dataValue);
