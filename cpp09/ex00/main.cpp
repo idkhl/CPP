@@ -2,6 +2,7 @@
 
 int	parseFile(std::string date, std::string value)
 {
+	struct tm tm;
 	if (date == "" || value == "")
 	{
 		std::cerr << "Error: Bad input" << std::endl;
@@ -27,6 +28,11 @@ int	parseFile(std::string date, std::string value)
 	if (std::strtod(value.c_str(), NULL) > std::numeric_limits<int>::max())
 	{
 		std::cerr << "Error: too large of a number" << std::endl;
+		return 1;
+	}
+	if (!strptime(date.c_str(), "%Y-%m-%d", &tm))
+	{
+		std::cerr << "Error: Invalid date" << std::endl;
 		return 1;
 	}
 	return 0;
