@@ -4,7 +4,8 @@ template <typename T>
 Array<T>::Array(void): _array(NULL), _size(0) {}
 
 template <typename T>
-Array<T>::Array(unsigned int n): _array(new T[n]), _size(n) {}
+Array<T>::Array(unsigned int n): _array(new T[n]()), _size(n) {
+}
 
 template <typename T>
 Array<T>::Array(const Array& other): _array(NULL), _size(0){
@@ -25,11 +26,6 @@ Array<T>& Array<T>::operator=(const Array& other){
 
 template <typename T>
 Array<T>::~Array(void) {
-	std::cout << "Destructor called" << std::endl;
-	// if (_array != NULL)
-	// 	std::cout << "Deleting array" << std::endl;
-	// else
-	// 	std::cout << "Array is NULL" << std::endl;
 	delete[] _array;
 }
 
@@ -41,6 +37,14 @@ T& Array<T>::operator[](unsigned int i) {
 		else
 			return _array[i];
 	}
+}
+
+template <typename T>
+const T& Array<T>::operator[](unsigned int i) const {
+    if (_array == NULL || i > _size - 1)
+        throw OutOfRange();
+    else
+        return _array[i];
 }
 
 template <typename T>

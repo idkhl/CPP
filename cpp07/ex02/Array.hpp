@@ -16,6 +16,7 @@ class Array {
 		~Array(void);
 		Array& operator=(const Array& other);
 		T& operator[](unsigned int i);
+		const T& operator[](unsigned int i) const;
 		unsigned int size(void) const;
 
 		class		OutOfRange : public std::exception

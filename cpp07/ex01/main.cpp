@@ -1,7 +1,10 @@
 #include "iter.hpp"
 
 template <typename T>
-void	print(const T& c) { std::cout << c; }
+void	print(const T& c)
+{
+	std::cout << c ;
+}
 
 int	main(void)
 {
