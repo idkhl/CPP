@@ -8,7 +8,7 @@ int	main(void)
 {
 	try
 	{
-		Bureaucrat a("Bureaucrat", 1);
+		Bureaucrat a("Bureaucrat", 0);
 		Bureaucrat b("Bureaucrat", 150);
 		Intern intern;
 		AForm *sform = intern.makeForm("shrubbery creation", "Garden");

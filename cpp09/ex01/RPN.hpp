@@ -9,7 +9,7 @@
 
 class RPN {
 public:
-    static double evaluate(const std::string& expression);
+    static double calc(const std::string& expression);
 };
 
 #endif

@@ -3,7 +3,7 @@
 int	main(void)
 {
 	Array<int> arr(2);
-	Array<int> other = arr;
+	Array<int> copy = arr;
 	try
 	{
 		copy[1] = 10;
@@ -16,5 +16,9 @@ int	main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
+
+	Array<int> emptyArray;
+    std::cout << "Empty array size = " << emptyArray.size() << std::endl;
+
 	return 0;
 }

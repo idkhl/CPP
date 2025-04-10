@@ -7,7 +7,7 @@ int main(int ac, char **av) {
     }
 
     try {
-        double result = RPN::evaluate(av[1]);
+        double result = RPN::calc(av[1]);
         std::cout << result << std::endl;
     } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;

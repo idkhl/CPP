@@ -17,16 +17,12 @@ class Span
 		Span &operator=(const Span &other);
 		~Span();
 
-	void addNumber(int n);
-	unsigned int shortestSpan();
-	unsigned int longestSpan();
+		void addNumber(int n);
+		unsigned int shortestSpan();
+		unsigned int longestSpan();
 
-	template <typename InputIterator>
-	void addNumbers(InputIterator begin, InputIterator end) {
-		if (std::distance(begin, end) > static_cast<int>(_size - _vec.size()))
-			throw SpanFull();
-		_vec.insert(_vec.end(), begin, end);
-	}
+		template <typename InputIterator>
+		void addNumbers(InputIterator begin, InputIterator end);
 
 	class NoSpan : public std::exception
 	{
@@ -46,5 +42,7 @@ class Span
 			}
 	};
 };
+
+#include "Span.tpp"
 
 #endif

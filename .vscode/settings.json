@@ -52,6 +52,7 @@
 		"streambuf": "cpp",
 		"typeinfo": "cpp",
 		"*.tpp": "cpp",
-		"map": "cpp"
+		"map": "cpp",
+		"list": "cpp"
 	}
 }
