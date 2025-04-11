@@ -10,9 +10,6 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -I ./includes
 
 RM = rm -f
 
-.cpp.o:
-	c++ $(CXXFLAGS) -c -o $@ $<
-
 all: $(NAME)
 
 $(NAME): $(OBJS)
